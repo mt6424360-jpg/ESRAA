@@ -140,7 +140,7 @@ export default function App() {
           <Ornament />
 
           <div className="poem">
-            <p>تستاهلي يا إسراء</p>
+            <p>تستاهلي يا سريوة</p>
             <p>وتستاهلي ديوان مش قصيدة</p>
             <p>وتستاهلي قلادة ذهب وحديدة</p>
           </div>
