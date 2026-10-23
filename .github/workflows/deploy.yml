@@ -39,7 +39,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build website
-        run: pnpm build --base=/wedding-invitation-is-available/
+        run: pnpm build --base=/ESRAA/
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
