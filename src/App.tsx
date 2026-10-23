@@ -142,7 +142,7 @@ export default function App() {
           <div className="poem">
             <p>تستاهلي يا إسراء</p>
             <p>وتستاهلي ديوان مش قصيدة</p>
-            <p>وتستاهلي قلادة ذهب وجديدة</p>
+            <p>وتستاهلي قلادة ذهب وحديدة</p>
           </div>
 
           <div className="invitation-copy">
