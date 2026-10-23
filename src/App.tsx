@@ -186,8 +186,8 @@ export default function App() {
                 </span>
                 <div>
                   <small>الموقع</small>
-                  <strong>موقع الصالة</strong>
-                  <span>يُضاف رابط خرائط Google هنا</span>
+                  <strong>صالة الياقوتة 2</strong>
+                  <span>https://maps.app.goo.gl/seZWmgdGQhh8Zvo49?g_st=iw</span>
                 </div>
               </div>
             )}
@@ -196,6 +196,7 @@ export default function App() {
           <footer>
             <Ornament />
             <p>وجودكم يسعدنا ويكمل فرحتنا</p>
+            <p>ملاحظة إدارة الصالة تمنع اصطحاب الاصفال </p>
           </footer>
         </div>
       </section>
