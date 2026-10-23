@@ -95,7 +95,7 @@ export default function App() {
             <div className="envelope-crop">
               <img
                 className="envelope-photo"
-                src="/assets/envelope-transparent.png"
+                src={`${import.meta.env.BASE_URL}assets/envelope-transparent.png`}
                 alt="ظرف وردي مطرز بالزهور"
               />
               <div className="paper-title">
