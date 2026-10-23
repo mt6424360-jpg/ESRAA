@@ -228,23 +228,25 @@
 
 .tap-note {
   position: absolute;
-  right: -38px;
-  bottom: 86px;
+  top: 15px;
+  right: 50%;
   z-index: 8;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   color: #754750;
   font-family: 'Aref Ruqaa', serif;
   font-size: 18px;
-  transform: rotate(-4deg);
+  white-space: nowrap;
+  transform: translateX(50%) rotate(-2deg);
   animation: note-float 2.2s ease-in-out infinite;
   transition: opacity 0.3s ease, transform 0.45s ease;
 }
 
 .tap-note svg {
-  width: 53px;
-  height: 68px;
-  margin: 8px -4px 0 0;
+  width: 38px;
+  height: 55px;
+  margin-top: 1px;
   overflow: visible;
   fill: none;
   stroke: #8b5964;
@@ -530,6 +532,13 @@
 .is-revealed .envelope-date {
   opacity: 0;
   pointer-events: none;
+}
+
+.is-revealed .tap-note {
+  transform: translate(50%, 9px) rotate(-2deg);
+}
+
+.is-revealed .envelope-date {
   transform: translateY(9px);
 }
 
@@ -602,18 +611,16 @@
   }
 
   .tap-note {
-    right: 0;
-    bottom: 69px;
-    flex-direction: column;
-    align-items: center;
+    top: 18px;
+    right: 50%;
     font-size: 16px;
+    transform: translateX(50%) rotate(-2deg);
   }
 
   .tap-note svg {
-    width: 40px;
-    height: 49px;
-    margin: -2px 0 0 55px;
-    transform: rotate(29deg);
+    width: 34px;
+    height: 48px;
+    margin-top: 0;
   }
 
   .envelope-date {
@@ -643,10 +650,6 @@
   .closing-flap {
     top: 75px;
     height: 121px;
-  }
-
-  .tap-note {
-    right: 4px;
   }
 
   .countdown {
