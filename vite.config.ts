@@ -4,9 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-
-
-
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
@@ -19,9 +16,9 @@ export default defineConfig(({ mode }) => {
       minify: !emitSourcemaps,
     },
     plugins: [
-react(),
+      react(),
       tailwindcss(),
-      figmaSiteConfiguration({}),
+      figmaSiteConfiguration({ title: 'سهرية إسراء' }),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),
       figmaMakeKitPlugin({ storiesGlob: '/src/**/*.stories.{ts,tsx,js,jsx}' }),
@@ -37,9 +34,7 @@ react(),
       port: parseInt(process.env.PORT || '8443'),
       strictPort: true,
       watch: {
-        ignored: [
-          '**/.figma/**',
-],
+        ignored: ['**/.figma/**'],
       },
     },
     preview: {
@@ -88,7 +83,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Figma Make App"
+  const title = config.title ?? 'Figma Make App'
   const description = config.description ?? ''
   // Imported HTML keeps its own favicon; new Makes default to the Make product icon.
   const favicon = config.icons?.icon ?? '/favicon.svg'
@@ -407,7 +402,7 @@ function figmaLinkedPackageSourcemaps(): Plugin {
       return []
     }
   })
-  const sourceMappingUrl = /\/\/# sourceMappingURL=(\S+)\s*$/
+  const sourceMappingUrl = /\/\/\# sourceMappingURL=(\S+)\s*$/
 
   function installedPath(file: string) {
     const linked = linkedPackages.find(({ realDir }) => file.startsWith(realDir + path.sep))
