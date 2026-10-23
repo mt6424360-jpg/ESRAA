@@ -76,15 +76,15 @@ export default function App() {
         <p className="opening-title">بكل الحب ندعوكم</p>
         <Ornament />
 
-        <div className="envelope-area">
-          <div className="tap-note" aria-hidden={revealed}>
-            <span>اضغط على الظرف لرؤية الدعوة</span>
-            <svg viewBox="0 0 75 85">
-              <path d="M12 6c39 12 54 33 34 56-9 10-20 13-31 8" />
-              <path d="M25 61 13 70l13 8" />
-            </svg>
-          </div>
+        <div className="tap-note" aria-hidden={revealed}>
+          <span>اضغط على الظرف لرؤية الدعوة</span>
+          <svg viewBox="0 0 75 85" aria-hidden="true">
+            <path d="M12 6c39 12 54 33 34 56-9 10-20 13-31 8" />
+            <path d="M25 61 13 70l13 8" />
+          </svg>
+        </div>
 
+        <div className="envelope-area">
           <button
             type="button"
             className="embroidered-envelope"
