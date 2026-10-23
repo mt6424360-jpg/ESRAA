@@ -1,4 +1,4 @@
-# figma-make-app
+# دعوة سهرية اللا إسراء
 
 React + Vite + Tailwind CSS project running inside Figma Make.
 
