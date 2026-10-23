@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
 const EVENT_DATE = new Date('2026-11-10T00:00:00')
-const LOCATION_URL = ''
+const LOCATION_URL = 'https://maps.app.goo.gl/seZWmgdGQhh8Zvo49?g_st=iw'
 
 type TimeLeft = {
   days: number
