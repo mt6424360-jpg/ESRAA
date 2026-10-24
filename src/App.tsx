@@ -175,7 +175,7 @@ export default function App() {
                 </span>
                 <div>
                   <small>الموقع</small>
-                  <strong>اضغط لفتح موقع الصالة</strong>
+                  <strong>اضغط هنا لفتح موقع الصالة</strong>
                   <span>خرائط Google</span>
                 </div>
               </a>
