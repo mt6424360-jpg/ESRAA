@@ -125,7 +125,7 @@ export default function App() {
         <div className="details-card">
           <header>
             <span className="details-kicker">باقي على ليلتنا</span>
-            <h2>موعد الفرح</h2>
+            <h2></h2>
           </header>
 
           <div className="countdown" role="timer" aria-label="الوقت المتبقي لموعد السهرية">
@@ -148,8 +148,8 @@ export default function App() {
           <div className="invitation-copy">
             <span>بكل حب وود</span>
             <p>
-              تتشرف حرم السيد
-              <strong> محمد المائل </strong>
+              تتشرف حرم الحاج 
+              <strong> محمد المائل \ </strong>
               بدعوتكم لحضور سهرية ابنتهم
             </p>
             <h1>إسراء</h1>
