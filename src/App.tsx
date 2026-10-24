@@ -148,8 +148,8 @@ export default function App() {
           <div className="invitation-copy">
             <span>بكل حب وود</span>
             <p>
-              تتشرف حرم الحاج 
-              <strong> محمد المائل \ </strong>
+              / تتشرف حرم الحاج 
+              <strong> محمد المائل  </strong>
               بدعوتكم لحضور سهرية ابنتهم
             </p>
             <h1>إسراء</h1>
