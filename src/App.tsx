@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 const EVENT_DATE = new Date('2026-11-10T00:00:00')
 const LOCATION_URL = 'https://maps.app.goo.gl/seZWmgdGQhh8Zvo49?g_st=iw'
+const SNAP_FILTER_URL = 'https://www.snapchat.com/lens/4cfe3e9a34054edfa431ff924e8a7595?share_id=MZb34rtuwVM&locale=en-GB'
 
 type TimeLeft = {
   days: number
@@ -35,6 +36,15 @@ function LocationIcon() {
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
       <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  )
+}
+
+function SnapIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 8.5A5 5 0 0 1 12 4a5 5 0 0 1 5 4.5V8l1.2 1.5V12l-1.1 1.3v2.2a2.5 2.5 0 0 1-2.5 2.5h-5.2a2.5 2.5 0 0 1-2.5-2.5v-2.2L5 12v-2.5L7 8v.5Z" />
+      <path d="M9.5 13.5c.9 1 1.9 1.5 2.5 1.5s1.6-.5 2.5-1.5" />
     </svg>
   )
 }
@@ -148,8 +158,8 @@ export default function App() {
           <div className="invitation-copy">
             <span>بكل حب وود</span>
             <p>
-               تتشرف حرم الحاج 
-              <strong>/ محمد المائل  </strong>
+              تتشرف حرم الحاج
+              <strong>/ محمد المائل </strong>
               بدعوتكم لحضور سهرية ابنتهم
             </p>
             <h1>إسراء</h1>
@@ -191,6 +201,17 @@ export default function App() {
                 </div>
               </div>
             )}
+
+            <a className="info-row snap-row" href={SNAP_FILTER_URL} target="_blank" rel="noreferrer">
+              <span className="info-icon snap-icon">
+                <SnapIcon />
+              </span>
+              <div>
+                <small>فلتر السناب</small>
+                <strong>اضغط هنا لفتح فلتر السناب</strong>
+                <span>Lens by Snapchat</span>
+              </div>
+            </a>
           </div>
 
           <footer>
