@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 const EVENT_DATE = new Date('2026-11-10T00:00:00')
 const LOCATION_URL = 'https://maps.app.goo.gl/seZWmgdGQhh8Zvo49?g_st=iw'
 const SNAP_FILTER_URL = 'https://www.snapchat.com/lens/4cfe3e9a34054edfa431ff924e8a7595?share_id=MZb34rtuwVM&locale=en-GB'
+const MUSIC_FILE = 'Y2Mate.st -    -   _  .mp3.mpeg'
+const MUSIC_URL = `${import.meta.env.BASE_URL}assets/${encodeURI(MUSIC_FILE)}`
 
 type TimeLeft = {
   days: number
@@ -62,11 +64,65 @@ function Ornament() {
 export default function App() {
   const [revealed, setRevealed] = useState(false)
   const [timeLeft, setTimeLeft] = useState(getTimeLeft)
+  const [isMusicOn, setIsMusicOn] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
     const timer = window.setInterval(() => setTimeLeft(getTimeLeft()), 1000)
     return () => window.clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    const audio = new Audio(MUSIC_URL)
+    audio.loop = true
+    audio.volume = 0.7
+    audio.preload = 'auto'
+    audioRef.current = audio
+
+    return () => {
+      audio.pause()
+      audio.src = ''
+    }
+  }, [])
+
+  const startMusic = async () => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    try {
+      await audio.play()
+      setIsMusicOn(true)
+    } catch {
+      setIsMusicOn(false)
+    }
+  }
+
+  const stopMusic = () => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    audio.pause()
+    audio.currentTime = 0
+    setIsMusicOn(false)
+  }
+
+  const toggleMusic = async () => {
+    if (isMusicOn) {
+      stopMusic()
+      return
+    }
+
+    if (!revealed) {
+      setRevealed(true)
+    }
+
+    await startMusic()
+  }
+
+  const handleEnvelopeClick = () => {
+    setRevealed(true)
+    void startMusic()
+  }
 
   const countdown = useMemo(
     () => [
@@ -80,6 +136,17 @@ export default function App() {
 
   return (
     <main className={`invitation-page ${revealed ? 'is-revealed' : ''}`} dir="rtl">
+      <button
+        type="button"
+        className="music-toggle"
+        onClick={toggleMusic}
+        aria-label={isMusicOn ? 'إيقاف الموسيقى' : 'تشغيل الموسيقى'}
+        aria-pressed={isMusicOn}
+        title={isMusicOn ? 'إيقاف الموسيقى' : 'تشغيل الموسيقى'}
+      >
+        <span aria-hidden="true">{isMusicOn ? '🔊' : '🔇'}</span>
+      </button>
+
       <div className="page-backdrop" aria-hidden="true" />
 
       <section className="opening-scene">
@@ -98,7 +165,7 @@ export default function App() {
           <button
             type="button"
             className="embroidered-envelope"
-            onClick={() => setRevealed(true)}
+            onClick={handleEnvelopeClick}
             aria-label="اضغط على الظرف لرؤية الدعوة"
             aria-expanded={revealed}
           >
