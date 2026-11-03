@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 const EVENT_DATE = new Date('2026-11-10T00:00:00')
 const LOCATION_URL = 'https://maps.app.goo.gl/seZWmgdGQhh8Zvo49?g_st=iw'
 const SNAP_FILTER_URL = 'https://www.snapchat.com/lens/4cfe3e9a34054edfa431ff924e8a7595?share_id=MZb34rtuwVM&locale=en-GB'
-const MUSIC_FILE = 'Y2Mate.st -    -   _  .mp3.mpeg'
+const MUSIC_FILE = 'soonng (online-audio-converter.com).mp3'
 const MUSIC_URL = `${import.meta.env.BASE_URL}assets/${encodeURI(MUSIC_FILE)}`
 
 type TimeLeft = {
